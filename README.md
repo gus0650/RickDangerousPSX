@@ -69,22 +69,16 @@ The output is `build/xrick.bin` and `build/xrick.cue`: one data track plus 6 aud
 
 ## Status
 
-The port was tested in PCSX ReARMed with the HLE BIOS. The splash and title screens, the title music, the high-score screen, the mission intro, walking, jumping, deaths, pause, shooting and dynamite all work at the correct 25 fps. It has not been tested on real hardware yet.
+The port was tested in PCSX ReARMed with the HLE BIOS. The splash and title screens, the title music, the high-score screen, the mission intro, walking, jumping, deaths, pause, shooting and dynamite all work at the correct 25 fps. 
+
+It has also been tested on MiSTer FPGA and runs fine.
+
+It has not been tested on real hardware yet.
 
 **Known limitations:**
 
 - High scores aren't saved, because memory card support isn't implemented.
 - The picture isn't scaled for PAL. It's centred in the frame.
-
-## Files
-
-```
-src/xrick/system/*_psx.c   PlayStation platform layer (new)
-src/xrick/config.h         build configuration
-tools/mkassets.py          data.zip -> romfs.bin, sndbank.bin (SPU ADPCM), CD-DA tracks
-CMakeLists.txt, iso.xml, system.cnf
-patches/elf2x-pt-load-only.patch
-```
 
 ## Legal
 
