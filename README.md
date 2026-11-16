@@ -7,7 +7,18 @@ It also draws from on Pierluigi Vicinanza's cleaned-up 2014 version of the codeb
 A new platform layer was written for the Sony PlayStation.
 It uses the original level data files from the Amiga version.
 
-## What the port does
+### Controls
+
+| Button | Action |
+|--------|--------|
+| D-pad | Walk, climb, crouch |
+| Circle | Jump (same as Up) |
+| Cross / Square | Fire. With a direction: Up = shoot, Down = dynamite, Left/Right = poke with stick. |
+| Start | Pause / resume |
+| Select + Start | End the current game |
+
+
+## How the port works
 
 | Part | How it works on the PS1 |
 |------|-------------------------|
@@ -18,15 +29,6 @@ It uses the original level data files from the Amiga version.
 | Data | Graphics, maps and texts are packed into a small read-only file table and linked into the executable. |
 | Memory | Same stack allocator as the Rockbox port, with a 640 KB static pool. |
 
-### Controls
-
-| Button | Action |
-|--------|--------|
-| D-pad | Walk, climb, crouch |
-| Circle | Jump (same as Up) |
-| Cross / Square | Fire. With a direction: Up = shoot, Down = dynamite, Left/Right = poke with stick. |
-| Start | Pause / resume |
-| Select + Start | End the current game |
 
 ## Building
 
