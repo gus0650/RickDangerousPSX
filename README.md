@@ -1,6 +1,8 @@
-# xrick for the Sony PlayStation
+# Rock Dangerous for the Sony PlayStation 1
 
-A PlayStation port of **xrick**, BigOrno's C reimplementation of *Rick Dangerous*.
+A PlayStation port of the classic Amiga "Rick Dangerous" by Core Design.
+
+Code is based on **xrick**, BigOrno's C reimplementation of the game.
 It is based on Pierluigi Vicinanza's cleaned-up 2014 version (the Rockbox port,
 https://github.com/pierluigi-vicinanza/xrick). The game code is unchanged; only a
 new platform layer was written for the PlayStation.
