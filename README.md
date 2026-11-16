@@ -3,9 +3,9 @@
 A PSX port of the classic Amiga "Rick Dangerous" by Core Design.
 
 Code is based on "xrick", BigOrno's C reimplementation of the game.
-It is based on Pierluigi Vicinanza's cleaned-up 2014 version (the Rockbox port,
-https://github.com/pierluigi-vicinanza/xrick). The game code is unchanged; only a
-new platform layer was written for the Sony PlayStation.
+It also draws from on Pierluigi Vicinanza's cleaned-up 2014 version (the Rockbox port,
+https://github.com/pierluigi-vicinanza/xrick) of the codebase. A new platform layer 
+was written for the Sony PlayStation.
 
 ## What the port does
 
