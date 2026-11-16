@@ -1,0 +1,49 @@
+diff --git a/tools/util/elf2x.c b/tools/util/elf2x.c
+index fc0ea9f..8a9554f 100644
+--- a/tools/util/elf2x.c
++++ b/tools/util/elf2x.c
+@@ -51,6 +51,7 @@ int main(int argc, char** argv) {
+ 	PRG_HEADER prg_heads[MAX_prg_entry_count];
+ 	unsigned int exe_taddr = 0xffffffff;
+ 	unsigned int exe_haddr = 0;
++	unsigned int exe_end = 0;
+ 	unsigned int exe_tsize = 0;
+ 	unsigned char* binary;
+ 	PSEXE exe;
+@@ -140,10 +141,16 @@ int main(int argc, char** argv) {
+ 
+ 		fread( &prg_heads[i], 1, sizeof(PRG_HEADER), fp );
+ 
+-		if( prg_heads[i].flags == 4 ) {
++		/* only PT_LOAD segments: toolchains such as mipsel-linux-gnu also
++		   emit PT_GNU_STACK / PT_MIPS_ABIFLAGS headers at address 0 */
++		if( prg_heads[i].flags == 4 || prg_heads[i].seg_type != 1 ) {
+ 			continue;
+ 		}
+ 
++		if( prg_heads[i].p_vaddr + prg_heads[i].p_filesz > exe_end ) {
++			exe_end = prg_heads[i].p_vaddr + prg_heads[i].p_filesz;
++		}
++
+ 		if( prg_heads[i].p_vaddr < exe_taddr ) {
+ 			exe_taddr = prg_heads[i].p_vaddr;
+ 		}
+@@ -154,8 +161,7 @@ int main(int argc, char** argv) {
+ 
+ 	}
+ 
+-	exe_tsize  = (exe_haddr - exe_taddr);
+-	exe_tsize += prg_heads[head.prg_entry_count - 1].p_filesz;
++	exe_tsize  = (exe_end - exe_taddr);
+ 
+ 	if (!quiet)
+ 		printf(
+@@ -186,7 +192,7 @@ int main(int argc, char** argv) {
+ 
+ 	for( i=0; i<head.prg_entry_count; i++ ) {
+ 
+-		if( prg_heads[i].flags == 4 ) {
++		if( prg_heads[i].flags == 4 || prg_heads[i].seg_type != 1 ) {
+ 			continue;
+ 		}
+ 

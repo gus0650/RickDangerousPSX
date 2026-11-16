@@ -1,0 +1,60 @@
+/*
+ * xrick/config.h
+ *
+ * Copyright (C) 1998-2002 BigOrno (bigorno@bigorno.net).
+ * Copyright (C) 2008-2014 Pierluigi Vicinanza.
+ * All rights reserved.
+ *
+ * The use and distribution terms for this software are contained in the file
+ * named README, which can be found in the root of this distribution. By
+ * using this software in any fashion, you are agreeing to be bound by the
+ * terms of this license.
+ *
+ * You must not remove this notice, or any other, from this software.
+ */
+
+#ifndef XRICK_CONFIG_H
+#define XRICK_CONFIG_H
+
+/* version */
+#define XRICK_VERSION_STR "${XRICK_VERSION_STR}"
+
+/* graphics (choose one) */
+#cmakedefine GFXST
+#cmakedefine GFXPC
+
+/* joystick support */
+#cmakedefine ENABLE_JOYSTICK
+
+/* sound support */
+#cmakedefine ENABLE_SOUND
+
+/* cheats support */
+#cmakedefine ENABLE_CHEATS
+
+/* auto-defocus support */
+/* does seem to cause all sorts of problems on BeOS, Windows... */
+#cmakedefine ENABLE_FOCUS
+
+/* development tools */
+#cmakedefine ENABLE_DEVTOOLS
+
+/* enable/disable subsystem debug */
+#cmakedefine DEBUG_MEMORY
+#cmakedefine DEBUG_ENTS
+#cmakedefine DEBUG_SCROLLER
+#cmakedefine DEBUG_MAPS
+#cmakedefine DEBUG_JOYSTICK
+#cmakedefine DEBUG_EVENTS
+#cmakedefine DEBUG_AUDIO
+#cmakedefine DEBUG_AUDIO2
+#cmakedefine DEBUG_VIDEO
+#cmakedefine DEBUG_VIDEO2
+
+/* compressed archive support*/
+#cmakedefine ENABLE_ZIP
+
+#endif /* ndef XRICK_CONFIG_H */
+
+/* eof */
+

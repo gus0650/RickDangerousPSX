@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CD image layout for mkpsxiso. Track 1 is data, tracks 2-7 are the music. -->
+<iso_project image_name="xrick.bin" cue_sheet="xrick.cue">
+	<track type="data">
+		<identifiers
+			system			="PLAYSTATION"
+			volume			="XRICK"
+			volume_set		="XRICK"
+			publisher		="XRICK PSX PORT"
+			data_preparer	="PSN00BSDK ${PSN00BSDK_VERSION}"
+			application		="PLAYSTATION"
+			copyright		="README.TXT;1"
+		/>
+		<directory_tree>
+			<file name="SYSTEM.CNF" type="data" source="${PROJECT_SOURCE_DIR}/system.cnf" />
+			<file name="XRICK.EXE"  type="data" source="xrick.exe" />
+		</directory_tree>
+	</track>
+	<track type="audio" source="assets/track2.wav" />
+	<track type="audio" source="assets/track3.wav" />
+	<track type="audio" source="assets/track4.wav" />
+	<track type="audio" source="assets/track5.wav" />
+	<track type="audio" source="assets/track6.wav" />
+	<track type="audio" source="assets/track7.wav" />
+</iso_project>

@@ -1,0 +1,6 @@
+build/
+assets/data.zip
+__pycache__/
+*.bin
+*.cue
+*.exe
