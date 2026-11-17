@@ -7,6 +7,8 @@ It also draws from on Pierluigi Vicinanza's cleaned-up 2014 version of the codeb
 A new platform layer was written for the Sony PlayStation.
 It uses the original level data files from the Amiga version.
 
+<img width="512" height="400" alt="image" src="https://github.com/user-attachments/assets/c3cf046d-5cc1-4704-929e-164416a2c284" />
+
 ### Controls
 
 | Button | Action |
